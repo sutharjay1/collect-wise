@@ -1,5 +1,3 @@
-Here is the content formatted in Markdown (`README.md`) for your GitHub repository:
-
 # CollectWise
 
 **Maximize Collections With AI**  
