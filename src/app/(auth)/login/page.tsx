@@ -132,6 +132,7 @@ const Login = () => {
                         <Input
                           {...field}
                           placeholder="Enter your email address..."
+                          className="w-full lg:w-full"
                         />
                       </FormControl>
                       <FormMessage />
@@ -160,6 +161,7 @@ const Login = () => {
                           {...field}
                           type="password"
                           placeholder="Enter your password..."
+                          className="w-full lg:w-full"
                         />
                       </FormControl>
                       <FormMessage />

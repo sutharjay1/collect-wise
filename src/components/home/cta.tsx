@@ -77,7 +77,7 @@ function BadgesSection() {
         <div className="h-12 lg:h-[52px]">
           <Image
             src="/_next/static/media/gdpr-ready-badge.b917e854.webp"
-            alt="GDPR Ready"
+            alt="image 1"
             width={380}
             height={162}
             className="h-full w-fit object-contain"
@@ -86,7 +86,7 @@ function BadgesSection() {
         <div className="h-12 lg:h-[52px]">
           <Image
             src="/_next/static/media/ccpa-ready-badge.44f4f257.webp"
-            alt="CCPA Ready"
+            alt="image 2"
             width={380}
             height={162}
             className="h-full w-fit object-contain"
@@ -94,12 +94,12 @@ function BadgesSection() {
         </div>
       </div>
       <div className="flex items-center gap-8">
-        <div className="h-20 lg:h-[92px]">
+        <div className="h-12 lg:h-[52px]">
           <Image
             src="/_next/static/media/iso-27001-badge.d9c500cc.webp"
-            alt="ISO 27001 Certified"
-            width={276}
-            height={276}
+            alt="image 3"
+            width={380}
+            height={162}
             className="h-full w-fit object-contain"
           />
         </div>

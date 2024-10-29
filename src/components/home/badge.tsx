@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { P } from "../ui/typography";
 
 const labelContent = {
-  title: "Our AI-powered research agent is live! 🎉",
+  title: "Our new feature is live! 🎉",
   label: "New",
 };
 

@@ -115,6 +115,7 @@ const SignUp = () => {
                           <Input
                             {...field}
                             placeholder="Enter your email address..."
+                            className="w-full lg:w-full"
                           />
                         </FormControl>
                         {/* <FormDescription>
@@ -137,6 +138,7 @@ const SignUp = () => {
                             {...field}
                             type="password"
                             placeholder="Enter your password..."
+                            className="w-full lg:w-full"
                           />
                         </FormControl>
 
