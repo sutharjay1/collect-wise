@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Grid from "../global/grid";
-import { Motion } from "../global/motion";
 import { Button } from "../ui/button";
 import { H1, H2, P } from "../ui/typography";
 
@@ -26,7 +25,8 @@ const infoItems = [
 ] as const;
 
 const Info: React.FC = () => (
-  <div className="relative isolate flex flex-col items-center justify-start bg-gradient-to-b from-white to-gray-50 px-6 py-16 lg:px-8">
+  // <div className="relative mx-auto max-w-[1440px]  isolate flex flex-col items-center justify-start   px-6 py-16 lg:px-8">
+  <section className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-start py-[60px] md:px-16 lg:px-6 xl:px-0">
     <H2 className="mt-8 border-none text-2xl font-semibold">
       Increase recoveries and cut collection costs
     </H2>
@@ -39,9 +39,9 @@ const Info: React.FC = () => (
         {infoItems.map((feature, index) => (
           <>
             <Grid.Border />
-            <Motion
+            <div
               key={feature.title}
-              className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 rounded-lg bg-white px-8 lg:grid-cols-2"
+              className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 rounded-lg px-8 lg:grid-cols-2"
             >
               <div
                 className={`order-${index % 2 === 0 ? "1" : "2"} flex items-center justify-center`}
@@ -54,12 +54,13 @@ const Info: React.FC = () => (
                   height={1000}
                 />
               </div>
-              <Grid.Line showHorizontal={false} showVertical={false} />
+
               <div className="space-y-4 lg:order-1">
                 <H1 className="text-2xl font-bold text-gray-900">
                   {feature.title}
                 </H1>
-                <P className="text-lg text-gray-600">{feature.description}</P>
+                <P className="text-lg text-gray-600">{feature.description}</P>{" "}
+                <Grid.Line showHorizontal={false} showVertical={false} />
                 <Button
                   asChild
                   className="h-10 rounded-xl bg-base text-zinc-100 hover:opacity-80 dark:text-zinc-900 md:px-5"
@@ -67,13 +68,13 @@ const Info: React.FC = () => (
                   <Link href="/get-started">Get started</Link>
                 </Button>
               </div>
-            </Motion>
+            </div>
             <Grid.Border isBottom />
           </>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Info;

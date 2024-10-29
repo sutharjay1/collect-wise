@@ -1,57 +1,51 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { heroContent } from "@/lib/content";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-interface NavItem {
-  label: string;
-  href: string;
-  external?: boolean;
-}
+// interface NavItem {
+//   label: string;
+//   href: string;
+//   external?: boolean;
+// }
 
-const mainNavItems: NavItem[] = [
-  { label: "Download", href: "/download" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Help center", href: "https://help.steep.app", external: true },
-];
+// const mainNavItems: NavItem[] = [
+//   { label: "Download", href: "/download" },
+//   { label: "Pricing", href: "/pricing" },
+//   { label: "Help center", href: "https://help.steep.app", external: true },
+// ];
 
-const companyLinks: NavItem[] = [
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
-  { label: "Careers", href: "/careers" },
-];
+// const companyLinks: NavItem[] = [
+//   { label: "Blog", href: "/blog" },
+//   { label: "About", href: "/about" },
+//   { label: "Careers", href: "/careers" },
+// ];
 
-const MobileMenuItem = ({
-  href,
-  children,
-  onClick,
-}: {
-  href: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-}) => (
-  <Link
-    href={href}
-    className="flex items-center justify-between py-2 text-sm"
-    onClick={onClick}
-  >
-    {children}
-    <ChevronRight className="h-4 w-4" />
-  </Link>
-);
+// const MobileMenuItem = ({
+//   href,
+//   children,
+//   onClick,
+// }: {
+//   href: string;
+//   children: React.ReactNode;
+//   onClick?: () => void;
+// }) => (
+//   <Link
+//     href={href}
+//     className="flex items-center justify-between py-2 text-sm"
+//     onClick={onClick}
+//   >
+//     {children}
+//     <ChevronRight className="h-4 w-4" />
+//   </Link>
+// );
 
 const NavLink = ({
   href,
@@ -106,7 +100,7 @@ const MobileMenu = ({
             <span className="sr-only">Close menu</span>
           </Button>
         </div>
-        <div className="flex-1 overflow-y-auto p-4">
+        {/* <div className="flex-1 overflow-y-auto p-4  ">
           <nav className="mt-6 space-y-2">
             {mainNavItems.map((item) => (
               <MobileMenuItem href={item.href} key={item.label}>
@@ -116,7 +110,7 @@ const MobileMenu = ({
 
             <MobileMenuItem href="/logout">Log Out</MobileMenuItem>
           </nav>
-        </div>
+        </div> */}
 
         <div className="space-y-3 p-4">
           <Button className="w-full" variant="outline" asChild>
@@ -173,7 +167,7 @@ export default function Navbar() {
             <Logo />
           </div>
 
-          <div className="hidden flex-1 items-center justify-center space-x-4 md:flex">
+          {/* <div className="hidden flex-1 items-center justify-center space-x-4 md:flex">
             {mainNavItems.map((item) => (
               <NavLink
                 key={item.href}
@@ -207,7 +201,7 @@ export default function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
+          </div> */}
 
           <div className="flex items-center space-x-4">
             <div className="hidden items-center space-x-2 md:flex">

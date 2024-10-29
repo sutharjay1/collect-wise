@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { heroContent } from "@/lib/content";
+import Image from "next/image";
 import Link from "next/link";
-import { P } from "../ui/typography";
 import Grid from "../global/grid";
+import { P } from "../ui/typography";
 
 export default function CTA() {
   return (
@@ -33,12 +34,12 @@ function ContentSection() {
       <div className="mt-5 flex flex-col justify-center gap-3 md:flex-row lg:mt-6 lg:justify-start">
         <div className="flex w-full items-start justify-center gap-2.5 md:w-auto">
           <Button className="w-fit bg-base" asChild>
-            <Link href="https://app.attio.com/welcome/sign-in">
-              Start for free
-            </Link>
+            <Link href="/get-started">Start for free</Link>
           </Button>
-          <Button variant="outline" className="w-fit">
-            Talk to sales
+          <Button asChild variant="outline" className="z-10 w-full px-5">
+            <Link href={heroContent.ctaPrimary.href}>
+              {heroContent.ctaPrimary.label}
+            </Link>
           </Button>
         </div>
         <EmailForm />
