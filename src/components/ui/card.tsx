@@ -36,7 +36,7 @@ const CardHeader = React.forwardRef<
   >
     <div
       className={cn(
-        "absolute left-6 top-0 h-2 w-32 rounded-b-full",
+        "absolute left-4 top-0 h-1.5 w-32 rounded-b-full md:left-6",
         badgeClassName ? badgeClassName : "bg-base/20 dark:bg-base/10",
       )}
     />{" "}

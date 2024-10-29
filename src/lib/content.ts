@@ -5,7 +5,7 @@ export const heroContent = {
   points: ["Fast", "Respectful", "Efficient"],
   ctaPrimary: {
     label: "Request a Demo",
-    href: "/request-demo",
+    href: "/get-started",
   },
 } as const;
 
@@ -45,7 +45,7 @@ export const finalCallToAction = {
   title: "Start collecting your unpaid debts now",
   cta: {
     label: "Request a Demo",
-    href: "/request-demo",
+    href: "/get-started",
   },
 } as const;
 
