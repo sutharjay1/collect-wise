@@ -146,3 +146,13 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* globals.css */
+.magicpattern {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 2000 1333' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='b' x='0' y='0' width='2000' height='1333'%3E%3Cpath fill='url(%23a)' d='M0 0h2000v1333H0z'%2F%3E%3C%2Fmask%3E%3Cpath fill='%23001611' d='M0 0h2000v1333H0z'%2F%3E%3Cg style='transform-origin:center center' stroke='%23048060' stroke-width='2' mask='url(%23b)'%3E%3Cpath fill='none' d='M0 0h100v100H0zM100 0h100v100H100zM200 0h100v100H200zM300 0h100v100H300z'%2F%3E%3Cpath fill='%2304806093' d='M400 0h100v100H400z'%2F%3E%3Cpath fill='none' d='M500 0h100v100H500zM600 0h100v100H600z'%2F%3E%3Cpath fill='%23048060fb' d='M700 0h100v100H700z'%2F%3E%3Cpath fill='%23048060c9' d='M800 0h100v100H800z'%2F%3E%3Cpath fill='none' d='M900 0h100v100H900z'%2F%3E%3Cpath fill='%2304806015' d='M1000 0h100v100h-100z'%2F%3E%3Cpath fill='none' d='M1100 0h100v100h-100z'%2F%3C/svg%3E");
+}

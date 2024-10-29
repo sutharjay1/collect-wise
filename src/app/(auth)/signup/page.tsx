@@ -71,10 +71,10 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-start justify-center bg-background">
+    <div className="flex min-h-screen items-center justify-center bg-background">
       <div
         className={cn(
-          "w-full space-y-6 pt-48",
+          "w-full space-y-6",
           step === "input" ? "max-w-lg" : "max-w-xl",
         )}
       >
@@ -91,7 +91,7 @@ const SignUp = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 px-6"
+              className="space-y-4 md:px-6"
             >
               <h1
                 className={cn(

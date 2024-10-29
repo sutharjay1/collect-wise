@@ -5,6 +5,7 @@ import Oval from "@/components/global/oval";
 import Badge from "@/components/home/badge";
 import CTA from "@/components/home/cta";
 import Footer from "@/components/home/footer";
+import Info from "@/components/home/info";
 import Stats from "@/components/home/stats";
 import { Button } from "@/components/ui/button";
 import GridPattern from "@/components/ui/grid-pattern";
@@ -132,6 +133,8 @@ const Root = () => {
             />
           </div>
         </Oval>
+
+        <Info />
 
         {/* <Features /> */}
 

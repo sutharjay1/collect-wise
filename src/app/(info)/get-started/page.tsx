@@ -91,7 +91,7 @@ const GetStarted = () => {
         <div className="relative grid w-full grid-rows-1 gap-6 px-8 sm:gap-4">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between py-4">
-              <CardTitle>Reqest a Demo</CardTitle>
+              <CardTitle>Request a Demo</CardTitle>
               <div className="flex flex-row items-center justify-between">
                 {/* <Button variant="default"  >
               
@@ -214,12 +214,12 @@ const GetStarted = () => {
         <Grid.Border isBottom />
       </div>
 
-      <div className="mx-auto w-full max-w-5xl px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col">
         <Grid.Border />
-
-        <div className="grid gap-6 px-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid w-full grid-cols-1 gap-6 px-8 sm:gap-4 md:grid-cols-3">
           <HighestSuccessRates />
           <LowestCosts />
+          <Grid.Line showHorizontal={false} showVertical={false} />
           <BrandFriendlyMessaging />
         </div>
         <Grid.Border isBottom />
@@ -245,6 +245,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         <div className="mb-4 rounded-full bg-primary/10 p-3">
           <Icon className="h-6 w-6 text-primary" />
         </div>
+        <Grid.Line showHorizontal={false} showVertical={false} />
         <H3 className="mb-2">{title}</H3>
         <P className={cn("text-sm text-muted-foreground")}>{description}</P>
       </CardContent>

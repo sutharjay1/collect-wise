@@ -91,8 +91,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-start justify-center bg-background">
-      <div className="w-full max-w-lg space-y-6 pt-48">
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="w-full max-w-lg space-y-6">
         <div className="flex justify-center">
           <Logo className="h-10 w-auto object-contain" />
         </div>
@@ -100,7 +100,7 @@ const Login = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 px-6"
+            className="space-y-4 md:px-6"
           >
             <h1
               className={cn(
