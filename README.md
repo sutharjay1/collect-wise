@@ -48,7 +48,7 @@ This project is built with [Next.js](https://nextjs.org), a React framework for 
 
 ### Prerequisites
 
-- Node.js v16+ and npm installed on your system.  
+- Node.js v16+ and npm installed on your system.
 - A GitHub account for repository cloning and version control.
 
 ### Setup & Installation

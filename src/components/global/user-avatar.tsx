@@ -17,9 +17,9 @@ import { useTheme } from "next-themes";
 const UserDropdownMenu = () => {
   const user = {
     image: "",
-    username: "",
-    email: "",
-    id: "",
+    username: "sutharjay1",
+    email: "sutharjay3635@gmail.com",
+    id: "1",
   };
   const { theme, setTheme } = useTheme();
   console.log("user", user);
@@ -31,6 +31,13 @@ const UserDropdownMenu = () => {
           variant="ghost"
           className="flex w-fit items-center gap-3 p-0 py-2 md:w-full md:px-3"
         >
+          <Hint label={`Hello, ${user?.username}`} side="bottom">
+            <div className="hidden min-w-0 flex-1 md:flex">
+              <P className="truncate text-sm font-medium leading-none text-slate-900 dark:text-slate-200">
+                {user?.email ?? "No Email"}
+              </P>
+            </div>
+          </Hint>
           <Avatar className="h-8 w-8 md:h-7 md:w-7">
             {user?.image ? (
               <AvatarImage src={user.image} />
@@ -40,14 +47,6 @@ const UserDropdownMenu = () => {
               </AvatarFallback>
             )}
           </Avatar>
-
-          <Hint label={`Hello, ${user?.username}`} side="bottom">
-            <div className="hidden min-w-0 flex-1 md:flex">
-              <P className="truncate text-sm font-medium leading-none text-slate-900 dark:text-slate-200">
-                {user?.email ?? "No Email"}
-              </P>
-            </div>
-          </Hint>
         </Button>
       </DropdownMenuTrigger>
 

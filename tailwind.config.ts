@@ -12,7 +12,7 @@ const config: Config = {
   prefix: "",
   theme: {
     container: {
-      center: true,
+      center: "true",
       padding: "2rem",
       screens: {
         "2xl": "1400px",
@@ -24,7 +24,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        polySansMedian: ['"PolySans Median"', "sans-serif"],
+        polySansMedian: ['PolySans Median"', "sans-serif"],
         gilroy: ["var(--font-gilroy-sans)", ...fontFamily.sans],
         geistSans: ["var(--font-geist-sans)", ...fontFamily.sans],
         geistMono: ["var(--font-geist-mono)", ...fontFamily.mono],
@@ -39,7 +39,6 @@ const config: Config = {
         "8xl": ["5rem", { lineHeight: "1" }],
         "9xl": ["6rem", { lineHeight: "1" }],
       },
-
       colors: {
         base: "hsl(var(--base))",
         border: "hsl(var(--border))",
@@ -75,6 +74,18 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,16 +101,28 @@ const config: Config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         shine: {
-          "0%": { backgroundPosition: "-150% 150%" },
-          "100%": { backgroundPosition: "150% -150%" },
+          "0%": {
+            backgroundPosition: "-150% 150%",
+          },
+          "100%": {
+            backgroundPosition: "150% -150%",
+          },
         },
       },
       animation: {

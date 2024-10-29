@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,19 +7,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { Menu, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { geistSans, gilroy } from "@/lib/fonts";
 import { heroContent } from "@/lib/content";
+import { cn } from "@/lib/utils";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 interface NavItem {
   label: string;
@@ -44,18 +36,35 @@ const companyLinks: CompanyLink[] = [
   { label: "Careers", href: "/careers" },
 ];
 
+const MobileMenuItem = ({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) => (
+  <Link
+    href={href}
+    className="flex items-center justify-between py-2 text-sm"
+    onClick={onClick}
+  >
+    {children}
+    <ChevronRight className="h-4 w-4" />
+  </Link>
+);
+
 const NavLink = ({
   href,
   children,
   external,
   className,
-  ghost,
 }: {
   href: string;
   children: React.ReactNode;
   external?: boolean;
   className?: string;
-  ghost?: boolean;
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -73,70 +82,116 @@ const NavLink = ({
         className,
       )}
     >
-      <Button variant="ghost" className="gap-0 rounded-xl px-4">
+      <Button variant="ghost" className="gap-0 rounded-xl px-4 text-center">
         {children}
       </Button>
     </LinkComponent>
   );
 };
 
-const Logo = () => (
-  <Link href="/" className="flex items-center space-x-2">
+const MobileMenu = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] h-screen bg-background">
+      <div className="flex h-full flex-col">
+        <div className="flex items-center justify-between border-b p-4">
+          <Logo />
+          <Button variant="ghost" size="icon" onClick={onClose}>
+            <X className="h-6 w-6" />
+            <span className="sr-only">Close menu</span>
+          </Button>
+        </div>
+        <div className="flex-1 overflow-y-auto p-4">
+          <nav className="mt-6 space-y-2">
+            {mainNavItems.map((item) => (
+              // <NavLink
+              //   key={item.href}
+              //   href={item.href}
+              //   external={item.external}
+              // >
+              //   {item.label}
+              // </NavLink>
+              <MobileMenuItem href={item.href}>{item.label}</MobileMenuItem>
+            ))}
+
+            <MobileMenuItem href="/logout">Log Out</MobileMenuItem>
+          </nav>
+        </div>
+        {/* <div className="space-y-3 p-4">
+            <Button className="w-full" variant="outline">
+              Upgrade to Pro
+            </Button>
+            <Button className="w-full">Contact</Button>
+          </div>
+      </div> */}
+        <div className="space-y-3 p-4">
+          <Button className="w-full" variant="outline" asChild>
+            <Link href="/login">Log in</Link>
+          </Button>
+          <Button
+            className="h-10 w-full bg-base px-5 text-white hover:opacity-90"
+            asChild
+          >
+            <Link href={heroContent.ctaPrimary.href}>
+              {heroContent.ctaPrimary.label}
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Logo = ({
+  className,
+  width = 120,
+  height = 24,
+  src = "/logo.jpg",
+}: {
+  className?: string;
+  width?: number;
+  height?: number;
+  src?: string;
+}) => (
+  <Link href="/" className="flex items-center">
     <Image
-      src="https://cdn.prod.website-files.com/64d41c822c1ca07c587e55c0/64e43643e6dfc41c4712b72b_Copy%20of%20Untitled%20Design-p-500.png"
-      alt="logo"
-      width={100}
-      height={10}
+      src={src}
+      alt="CollectWise logo"
+      width={width}
+      height={height}
+      className={cn("h-6 w-auto", className)}
     />
   </Link>
 );
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60",
+        // (pathname === "/login" ||
+        //   pathname === "/signup" ||
+        //   pathname === "/forgot-password") &&
+        //   "hidden",
+      )}
+    >
       <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-2">
-	
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="w-fit">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left">
-                <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
-                </SheetHeader>
-                <div className="mt-4 flex flex-col space-y-4">
-                  {mainNavItems.map((item) => (
-                    <NavLink
-                      key={item.href}
-                      href={item.href}
-                      external={item.external}
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
-                  <Separator />
-                  {companyLinks.map((item) => (
-                    <NavLink key={item.href} href={item.href}>
-                      {item.label}
-                    </NavLink>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-          <div className="flex-shrink-0">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
             <Logo />
           </div>
+
           {/* Desktop Navigation */}
-          <div className="hidden flex-1 items-center space-x-2 md:flex">
+          <div className="hidden flex-1 items-center justify-center space-x-4 md:flex">
             {mainNavItems.map((item) => (
               <NavLink
                 key={item.href}
@@ -171,15 +226,12 @@ export default function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          {/* Logo */}
+
           {/* Right Section */}
           <div className="flex items-center space-x-4">
             <div className="hidden items-center space-x-2 md:flex">
-              <NavLink href="https://web.steep.app" external>
-                Log in
-              </NavLink>
+              <NavLink href="/login">Log in</NavLink>
               <Separator orientation="vertical" className="h-6" />
-
               <Button
                 className="h-10 bg-base px-5 text-white hover:opacity-90"
                 asChild
@@ -189,9 +241,20 @@ export default function Navbar() {
                 </Link>
               </Button>
             </div>
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Open menu</span>
+            </Button>
           </div>
         </div>
       </nav>
+      <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }

@@ -9,7 +9,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "border-slate-6 rounded-lg border bg-background text-card-foreground shadow-md md:shadow-lg",
+      "border-slate-6 rounded-xl border bg-background text-card-foreground shadow-sm",
       className,
     )}
     {...props}
@@ -28,7 +28,7 @@ const CardHeader = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "border-slate-6 relative flex flex-col space-y-1.5 border-b p-6 px-6 py-4",
+      "border-slate-6 relative flex flex-col space-y-1.5 border-b p-6 px-5 py-4",
       className,
     )}
     {...props}
@@ -36,7 +36,7 @@ const CardHeader = React.forwardRef<
     <div
       className={cn(
         "absolute left-6 top-0 h-2 w-32 rounded-b-full",
-        badgeClassName ? badgeClassName : "bg-primary/30 dark:bg-primary/10",
+        badgeClassName ? badgeClassName : "bg-base/20 dark:bg-base/10",
       )}
     />{" "}
     {props.children}
@@ -78,7 +78,8 @@ const CardContent = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "min-w-full border-separate border-spacing-0 border-none p-6 px-4 py-4 text-left",
+      "min-w-full border-separate border-spacing-0 border p-6 px-5 py-4 text-left",
+      "border-slate-6 rounded-xl border shadow-sm",
       className,
     )}
     {...props}

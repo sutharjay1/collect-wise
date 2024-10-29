@@ -30,12 +30,12 @@ const Hint = ({
         sideOffset={sideOffset}
         align={align}
         className={cn(
-          "text-text z-[500] border-[1px] border-zinc-900/5 bg-zinc-100 px-2 py-1 dark:border-zinc-300/10 dark:bg-zinc-900",
+          "text-text z-[500] border-[1px] border-zinc-900/5 bg-zinc-50 px-2 py-1 dark:border-zinc-900/10 dark:bg-zinc-900",
           className,
         )}
         alignOffset={alignOffset}
       >
-        <P className={cn("font-semibold capitalize")}>{label}</P>
+        <P className={cn("font-gilroy font-medium capitalize")}>{label}</P>
       </TooltipContent>
     </Tooltip>
   );

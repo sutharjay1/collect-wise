@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/provider/theme-provider";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/global/nav-bar";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,7 +45,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Toaster />
-            <Navbar />
+
             {children}
           </ThemeProvider>
         </TooltipProvider>

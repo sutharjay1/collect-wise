@@ -10,7 +10,7 @@ export default function CTA() {
     <section className="relative mx-auto max-w-[1440px] py-[60px] md:px-16 lg:px-6 lg:pb-[120px] lg:pt-[90px] xl:px-0">
       <Grid.Border />
       <div className="relative grid auto-rows-fr grid-cols-4 place-items-center justify-items-stretch gap-0 px-5 lg:grid-cols-12 lg:gap-6">
-        <Grid.Line  />
+        <Grid.Line />
         <ContentSection />
         <BadgesSection />
       </div>
