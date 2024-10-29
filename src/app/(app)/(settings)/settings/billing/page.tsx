@@ -183,6 +183,7 @@ const Settings = () => {
                             <FormControl>
                               <Input
                                 placeholder="Enter account number"
+                                className="w-full lg:w-full"
                                 {...field}
                               />
                             </FormControl>
@@ -199,6 +200,7 @@ const Settings = () => {
                             <FormControl>
                               <Input
                                 placeholder="Enter routing number"
+                                className="w-full lg:w-full"
                                 {...field}
                               />
                             </FormControl>
@@ -213,7 +215,11 @@ const Settings = () => {
                           <FormItem>
                             <FormLabel>Address</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter address" {...field} />
+                              <Input
+                                placeholder="Enter address"
+                                {...field}
+                                className="w-full lg:w-full"
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -226,7 +232,11 @@ const Settings = () => {
                           <FormItem>
                             <FormLabel>City</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter city" {...field} />
+                              <Input
+                                placeholder="Enter city"
+                                className="w-full lg:w-full"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -272,7 +282,11 @@ const Settings = () => {
                           <FormItem>
                             <FormLabel>Zip Code</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter zip code" {...field} />
+                              <Input
+                                placeholder="Enter zip code"
+                                className="w-full lg:w-full"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -329,7 +343,11 @@ const Settings = () => {
                           <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter email" {...field} />
+                              <Input
+                                placeholder="Enter email"
+                                className="w-full lg:w-full"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

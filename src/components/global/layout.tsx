@@ -21,8 +21,9 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <header className="z-20 flex items-center justify-between border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center">
+      <header className="relative z-20 flex items-center justify-between border-b border-gray-200 px-6 py-4">
+        <div className="flex items-center justify-start gap-x-2">
+          <SidebarTrigger className="size-8" />
           <Image
             src="/logo.jpg"
             className="h-auto w-32"
@@ -75,7 +76,7 @@ const Layout = ({ children }: Props) => {
           <UserDropdownMenu />
         </div>
       </header>
-      <SidebarTrigger />
+
       <main className="flex-1 overflow-y-auto">
         <div className="relative z-20 mx-auto w-full max-w-5xl py-4">
           {children}

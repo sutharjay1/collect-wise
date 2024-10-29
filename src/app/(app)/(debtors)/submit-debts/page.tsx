@@ -12,7 +12,6 @@ import { useState } from "react";
 
 import { Check, Download } from "lucide-react";
 import { UploadDropZone } from "@/components/global/upload-drop-zone";
- 
 
 const debtorSubmissionOptions = [
   {

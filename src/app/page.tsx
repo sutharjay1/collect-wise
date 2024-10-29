@@ -1,3 +1,4 @@
+import Annoucement from "@/components/global/annoucement";
 import Grid from "@/components/global/grid";
 import Navbar from "@/components/global/nav-bar";
 import Oval from "@/components/global/oval";
@@ -17,8 +18,8 @@ import Link from "next/link";
 const Root = () => {
   return (
     <>
+      <Annoucement />
       <Navbar />
-
       <main
         className={cn(
           "relative z-10 min-h-screen bg-background",

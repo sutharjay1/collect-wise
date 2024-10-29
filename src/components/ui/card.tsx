@@ -29,6 +29,7 @@ const CardHeader = React.forwardRef<
     ref={ref}
     className={cn(
       "border-slate-6 relative flex flex-col space-y-1.5 border-b p-6 px-5 py-4",
+      "space-y-0 py-3",
       className,
     )}
     {...props}

@@ -74,7 +74,7 @@ export type ChartProps = {
 const Chart = ({ time }: ChartProps) => {
   return (
     <Card>
-      <CardContent>
+      <CardContent className="border-none">
         <ChartContainer config={chartConfig}>
           <AreaChart
             accessibilityLayer

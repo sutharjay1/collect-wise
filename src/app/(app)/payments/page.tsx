@@ -31,9 +31,7 @@ const mockInvoiceData: InvoiceData[] = Array.from({ length: 10 }, (_, i) => ({
     Math.floor(Math.random() * 3)
   ],
   amount: parseFloat((Math.random() * 500 + 50).toFixed(2)),
-  date: new Date(
-    Date.now() - Math.floor(Math.random() * 10000000000),
-  ).toLocaleDateString(),
+  date: new Date(2024, 0, 1).toLocaleDateString(),
 }));
 
 const Payments = () => {
