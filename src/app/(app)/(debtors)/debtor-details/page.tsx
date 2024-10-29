@@ -9,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -34,7 +33,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { Cloud, File, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Dropzone from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -69,14 +68,6 @@ type DebtorsInfoFormData = z.infer<typeof debtorsInfoSchema>;
 type DebtorsContactFormData = z.infer<typeof debtorsContactSchema>;
 
 const DebtorDetails = () => {
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
-
-  // const handleButtonClick = () => {
-  //   if (fileInputRef.current) {
-  //     fileInputRef.current.click();
-  //   }
-  // };
-
   const mutation = useMutation({
     mutationFn: async (data: DebtorsInfoFormData) => {
       console.table(data);
