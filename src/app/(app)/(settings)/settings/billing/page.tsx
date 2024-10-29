@@ -80,6 +80,16 @@ const Settings = () => {
       });
     },
     onError: (error) => {
+      toast.error("Failed to update bank details", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(255, 0, 0, 0.15)",
+          border: "0.1px solid rgba(255, 0, 0, 0.2)",
+          color: "#fff",
+        },
+      });
+      console.error(error);
       // Optionally handle error state here
     },
   });
@@ -101,7 +111,16 @@ const Settings = () => {
       });
     },
     onError: (error) => {
-      // Optionally handle error state here
+      toast.error("Failed to invite user", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(255, 0, 0, 0.15)",
+          border: "0.1px solid rgba(255, 0, 0, 0.2)",
+          color: "#fff",
+        },
+      });
+      console.error(error);
     },
   });
 

@@ -1,23 +1,10 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ThemeProvider } from "@/provider/theme-provider";
-import { Toaster } from "sonner";
+import { geistSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/global/nav-bar";
-import { QueryClientProvider } from "@tanstack/react-query";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { ThemeProvider } from "@/provider/theme-provider";
+import type { Metadata } from "next";
+import { Toaster } from "sonner";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Collect Wise",

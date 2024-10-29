@@ -22,15 +22,13 @@ interface NavItem {
   external?: boolean;
 }
 
-interface CompanyLink extends NavItem {}
-
 const mainNavItems: NavItem[] = [
   { label: "Download", href: "/download" },
   { label: "Pricing", href: "/pricing" },
   { label: "Help center", href: "https://help.steep.app", external: true },
 ];
 
-const companyLinks: CompanyLink[] = [
+const companyLinks: NavItem[] = [
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
@@ -111,26 +109,15 @@ const MobileMenu = ({
         <div className="flex-1 overflow-y-auto p-4">
           <nav className="mt-6 space-y-2">
             {mainNavItems.map((item) => (
-              // <NavLink
-              //   key={item.href}
-              //   href={item.href}
-              //   external={item.external}
-              // >
-              //   {item.label}
-              // </NavLink>
-              <MobileMenuItem href={item.href}>{item.label}</MobileMenuItem>
+              <MobileMenuItem href={item.href} key={item.label}>
+                {item.label}
+              </MobileMenuItem>
             ))}
 
             <MobileMenuItem href="/logout">Log Out</MobileMenuItem>
           </nav>
         </div>
-        {/* <div className="space-y-3 p-4">
-            <Button className="w-full" variant="outline">
-              Upgrade to Pro
-            </Button>
-            <Button className="w-full">Contact</Button>
-          </div>
-      </div> */}
+
         <div className="space-y-3 p-4">
           <Button className="w-full" variant="outline" asChild>
             <Link href="/login">Log in</Link>
@@ -173,15 +160,11 @@ export const Logo = ({
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+
   return (
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60",
-        // (pathname === "/login" ||
-        //   pathname === "/signup" ||
-        //   pathname === "/forgot-password") &&
-        //   "hidden",
       )}
     >
       <nav className="container mx-auto px-4">
@@ -190,7 +173,6 @@ export default function Navbar() {
             <Logo />
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden flex-1 items-center justify-center space-x-4 md:flex">
             {mainNavItems.map((item) => (
               <NavLink
@@ -227,7 +209,6 @@ export default function Navbar() {
             </DropdownMenu>
           </div>
 
-          {/* Right Section */}
           <div className="flex items-center space-x-4">
             <div className="hidden items-center space-x-2 md:flex">
               <NavLink href="/login">Log in</NavLink>
@@ -241,7 +222,7 @@ export default function Navbar() {
                 </Link>
               </Button>
             </div>
-            {/* Mobile Menu Button */}
+
             <Button
               variant="ghost"
               size="icon"

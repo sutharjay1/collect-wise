@@ -11,7 +11,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { Check, Download } from "lucide-react";
-import { UploadDropZone } from "../debtor-details/page";
+import { UploadDropZone } from "@/components/global/upload-drop-zone";
+ 
 
 const debtorSubmissionOptions = [
   {
@@ -112,8 +113,7 @@ const SubmitDebts = () => {
 };
 
 const FileUploadMapper = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);
+  const [currentStep] = useState(1);
 
   const requiredColumns = [
     { name: "Debtor Name", required: true },
@@ -136,20 +136,21 @@ const FileUploadMapper = () => {
     { number: 4, label: "Review" },
   ];
 
-  const handleDragOver = (e: any) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
+  // const handleDragOver = (e: any) => {
+  //   e.preventDefault();
+  //   setIsDragging(true);
 
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
+  // };
 
-  const handleDrop = (e: any) => {
-    e.preventDefault();
-    setIsDragging(false);
-    // Handle file drop here
-  };
+  // const handleDragLeave = () => {
+  //   setIsDragging(false);
+  // };
+
+  // const handleDrop = (e: any) => {
+  //   e.preventDefault();
+  //   setIsDragging(false);
+  //   // Handle file drop here
+  // };
 
   return (
     <div className="mx-auto w-full max-w-6xl p-6">

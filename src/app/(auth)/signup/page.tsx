@@ -17,7 +17,7 @@ import { P } from "@/components/ui/typography";
 import { geistSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -37,7 +37,6 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const SignUp = () => {
-  const queryClient = new QueryClient();
   const [step, setStep] = useState<"input" | "confirmation">("input");
 
   const form = useForm<FormValues>({
@@ -49,7 +48,7 @@ const SignUp = () => {
     },
   });
 
-  const { mutate, isPending, isError, error } = useMutation({
+  const { mutate, isError, error } = useMutation({
     mutationFn: async (data: FormValues) => {
       // throw new Error("Something went wrong. Please try again.");
 

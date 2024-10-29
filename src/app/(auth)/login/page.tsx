@@ -20,6 +20,7 @@ import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const schema = z.object({
@@ -57,11 +58,29 @@ const Login = () => {
       });
     },
     onSuccess: () => {
-      alert("Login successful!");
+      toast.success("Login successful", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(0, 255, 0, 0.15)",
+          border: "0.1px solid rgba(0, 255, 0, 0.2)",
+          color: "#fff",
+        },
+      });
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       setIsError(true);
       setErrorMessage(error.message);
+      toast.error("Failed to login", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(255, 0, 0, 0.15)",
+          border: "0.1px solid rgba(255, 0, 0, 0.2)",
+          color: "#fff",
+        },
+      });
+      console.error(error);
     },
   });
 
@@ -170,7 +189,9 @@ const Login = () => {
                     className="text-sm text-zinc-700 dark:text-zinc-400"
                     asChild
                   >
-                    <Link href="/signup">Don't have an account? Sign Up</Link>
+                    <Link href="/signup">
+                      Don&apos;t have an account? Sign Up
+                    </Link>
                   </Button>
                 </div>
               </div>

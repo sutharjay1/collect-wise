@@ -74,6 +74,16 @@ const Roles = () => {
       });
     },
     onError: (error) => {
+      toast.error("Failed to add role", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(255, 0, 0, 0.15)",
+          border: "0.1px solid rgba(255, 0, 0, 0.2)",
+          color: "#fff",
+        },
+      });
+      console.error(error);
       // Optionally handle error state here
     },
   });

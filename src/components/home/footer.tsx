@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { P } from "../ui/typography";
 
 const Footer = () => {

@@ -1,4 +1,3 @@
-import { Calendar, Inbox, Search, Settings } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -6,12 +5,12 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { DomainMode } from "@/types";
-import { RiDashboard2Fill } from "react-icons/ri";
+import { Calendar, Inbox, Settings } from "lucide-react";
 import Link from "next/link";
+import { RiDashboard2Fill } from "react-icons/ri";
 import { Button } from "../ui/button";
 
 type MenuItem = {

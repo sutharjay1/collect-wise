@@ -19,7 +19,7 @@ export function FadeText({
   framerProps,
   text,
   useInViewProp = true,
-  inViewMargin = "-100px",
+  // inViewMargin = "-100px",
   children,
 }: FadeTextProps) {
   const ref = useRef(null);
@@ -35,7 +35,7 @@ export function FadeText({
   const defaultFramerProps = useMemo(
     (): Variants => ({
       hidden: { opacity: 0, [axis]: directionOffset },
-      //@ts-ignore
+      //@ts-expect-error skip the type error
       visible: {
         opacity: 1,
         [axis]: 0,

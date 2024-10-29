@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import Chart from "@/components/global/chart";
+import Grid from "@/components/global/grid";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -9,18 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import Grid from "@/components/global/grid";
 import { cn, formatPrice } from "@/lib/utils";
-import Chart, { ChartProps } from "@/components/global/chart";
-import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { useState } from "react";
 
-const stats = [
+interface StatType {
+  label: string;
+  amount: number;
+}
+
+const stats: StatType[] = [
   { label: "Daily Amount", amount: 0 },
   { label: "Total Collected", amount: 0 },
   { label: "Payouts", amount: 0 },
-] as const;
+];
 
 const timeItems = [
   { label: "Today", value: "today" },
@@ -127,12 +131,7 @@ const Dashboard = () => {
   );
 };
 
-interface StatCardProps {
-  label: string;
-  amount: number;
-}
-
-export function StatCard({ label, amount }: StatCardProps) {
+const StatCard = ({ label, amount }: StatType) => {
   return (
     <Card className={cn("w-full transition-all duration-200")}>
       <CardHeader className="py-2">
@@ -149,6 +148,6 @@ export function StatCard({ label, amount }: StatCardProps) {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default Dashboard;

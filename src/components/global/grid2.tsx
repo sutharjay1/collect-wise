@@ -32,9 +32,9 @@
 //   );
 // };
 
-// const GridBorder: React.FC<GridBorderProps> = ({ 
+// const GridBorder: React.FC<GridBorderProps> = ({
 //   orientation = "horizontal",
-//   className 
+//   className
 // }) => {
 //   if (orientation === "horizontal") {
 //     return (
@@ -117,19 +117,19 @@ const EdgeBorder: React.FC<EdgeBorderProps> = ({ position, className }) => (
   </div>
 );
 
-const GridItem: React.FC<GridItemProps> = ({ 
-  children, 
+const GridItem: React.FC<GridItemProps> = ({
+  children,
   className,
   colSpan = 1,
-  rowSpan = 1
+  rowSpan = 1,
 }) => {
   return (
-    <div 
+    <div
       className={cn(
         "relative h-fit",
         `col-span-${colSpan}`,
         `row-span-${rowSpan}`,
-        className
+        className,
       )}
     >
       {children}
@@ -154,7 +154,7 @@ const Grid: React.FC<GridProps> = ({
     `gap-${gap}`,
     showOuterBorder && "border border-[#E4E7EB] rounded-lg",
     `p-${padding}`,
-    className
+    className,
   );
 
   const renderInnerBorders = () => {
@@ -165,7 +165,7 @@ const Grid: React.FC<GridProps> = ({
         key={`vertical-${i}`}
         className={cn(
           "absolute top-0 hidden h-full w-[1px] bg-[#E4E7EB] md:block",
-          `left-[${((i + 1) * 100) / cols}%]`
+          `left-[${((i + 1) * 100) / cols}%]`,
         )}
       />
     ));
@@ -175,7 +175,7 @@ const Grid: React.FC<GridProps> = ({
         key={`horizontal-${i}`}
         className={cn(
           "absolute left-0 h-[1px] w-full bg-[#E4E7EB]",
-          `top-[${((i + 1) * 100) / rows}%]`
+          `top-[${((i + 1) * 100) / rows}%]`,
         )}
       />
     ));
@@ -201,11 +201,11 @@ const Grid: React.FC<GridProps> = ({
 };
 
 // Pre-built configurations
-const TwoByTwo: React.FC<Omit<GridProps, 'cols' | 'rows'>> = (props) => (
+const TwoByTwo: React.FC<Omit<GridProps, "cols" | "rows">> = (props) => (
   <Grid {...props} cols={2} rows={2} />
 );
 
-const ThreeByTwo: React.FC<Omit<GridProps, 'cols' | 'rows'>> = (props) => (
+const ThreeByTwo: React.FC<Omit<GridProps, "cols" | "rows">> = (props) => (
   <Grid {...props} cols={3} rows={2} />
 );
 

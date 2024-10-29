@@ -1,17 +1,14 @@
 "use client";
 
-import * as React from "react";
+import { cn } from "@/lib/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "./button";
+import * as React from "react";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "./drawer";
 
@@ -53,7 +50,7 @@ const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => {
-  const { isDesktop, setIsDesktop } = useIsDesktop();
+  const { isDesktop } = useIsDesktop();
   const [closeDrawer, setCloseDrawer] = React.useState(true);
 
   return (
@@ -123,7 +120,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left mt-1 mb-3",
+      "mb-3 mt-1 flex flex-col space-y-1.5 text-center sm:text-left",
       className,
     )}
     {...props}
@@ -174,15 +171,15 @@ DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
 export {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
   DialogClose,
-  DialogTrigger,
   DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
   DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
 };
 
 // import * as React from "react";

@@ -10,7 +10,7 @@ const labelContent = {
 type Props = {
   className?: string;
   variant?: "default" | "destructive";
-  [key: string]: any;
+  [key: string]: string | number | boolean | undefined;
 };
 
 const Badge = ({ className, variant = "default" }: Props) => {
@@ -33,10 +33,7 @@ const Badge = ({ className, variant = "default" }: Props) => {
             <span className="h-[26px] rounded-3xl bg-zinc-900 p-[3px_9px_3px_10px] align-middle font-inter text-zinc-100 dark:text-zinc-900">
               {labelContent.label}
             </span>
-            {/* <div className="flex w-fit flex-col items-start justify-start gap-[6px] p-[2px_7px_2px_2px] text-sm text-secondary md:flex-row">
-            <span className="h-[26px] rounded-3xl bg-zinc-900 p-[3px_9px_3px_10px] align-middle font-inter text-zinc-100 dark:text-zinc-900">
-              {labelContent.label}
-            </span> */}
+
             <div className="flex items-center">
               <P className="pt-0 font-inter leading-4">{labelContent.title}</P>
               <svg

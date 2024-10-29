@@ -3,7 +3,6 @@ import Navbar from "@/components/global/nav-bar";
 import Oval from "@/components/global/oval";
 import Badge from "@/components/home/badge";
 import CTA from "@/components/home/cta";
-import Features from "@/components/home/features";
 import Footer from "@/components/home/footer";
 import Stats from "@/components/home/stats";
 import { Button } from "@/components/ui/button";

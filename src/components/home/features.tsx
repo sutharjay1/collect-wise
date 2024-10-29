@@ -1,4 +1,6 @@
-import React from "react";
+import { benefitsContent } from "@/lib/content";
+import Link from "next/link";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -7,13 +9,8 @@ import {
   CardTitle,
 } from "../ui/card";
 import { P } from "../ui/typography";
-import { Button } from "../ui/button";
-import { benefitsContent } from "@/lib/content";
-import Link from "next/link";
 
-type Props = {};
-
-const Features: React.FC<Props> = () => {
+const Features = () => {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16 md:px-8">
       <div className="text-center">

@@ -20,6 +20,7 @@ import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const schema = z.object({
@@ -55,11 +56,31 @@ const ForgotPassword = () => {
     onSuccess: () => {
       setSuccessMessage("A password reset link has been sent to your email.");
       setErrorMessage("");
+      toast.success("A password reset link has been sent to your email.", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(0, 255, 0, 0.15)",
+          border: "0.1px solid rgba(0, 255, 0, 0.2)",
+          color: "#fff",
+        },
+      });
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       setIsError(true);
       setErrorMessage(error.message);
       setSuccessMessage("");
+
+      toast.error("Failed to reset password", {
+        duration: 2000,
+        richColors: true,
+        style: {
+          backgroundColor: "rgba(255, 0, 0, 0.15)",
+          border: "0.1px solid rgba(255, 0, 0, 0.2)",
+          color: "#fff",
+        },
+      });
+      console.error(error);
     },
   });
 
@@ -96,8 +117,8 @@ const ForgotPassword = () => {
                 geistSans.className,
               )}
             >
-              Enter the email associated with your CollectWise account and we'll
-              send you a link to reset your password
+              Enter the email associated with your CollectWise account and
+              we&apos;ll send you a link to reset your password
             </h1>
 
             <div className="mx-auto flex w-full max-w-md flex-col">
